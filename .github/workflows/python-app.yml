@@ -24,5 +24,7 @@ jobs:
       run: |
         pip install -q pipenv
         pipenv sync --dev
+
     - run: pipenv run flake8 .
-    - run: pipenv run pytest
+    - run: pipenv run pytest  --cov=pypro
+    - run: pipenv run codecov
