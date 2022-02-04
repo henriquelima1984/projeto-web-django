@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('base', '0001_initial.py'),
+        ('base', '0001_initial'),
     ]
 
     operations = [
