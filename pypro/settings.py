@@ -29,6 +29,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', default=False)
+
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 AUTH_USER_MODEL = 'base.User'
@@ -76,6 +78,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pypro.wsgi.application'
 
+# Configuração Django Debug Toolbar
+
+INTERNAL_IPS = config('INTERNAL_IPS', cast=Csv(), default='127.0.0.1')
+
+if DEBUG:  # pragma: no cover
+    INSTALLED_APPS.append('debug_toolbar')
+    MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
@@ -132,10 +141,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
 COLLECTFAST_ENABLED = False
 
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-COLLECTFAST_STRATEGY = 'collectfast.strategies.boto3.Boto3Strategy'
-
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 
 # Configuração Amazon S3
@@ -147,8 +152,10 @@ if AWS_ACCESS_KEY_ID:  # pragma: no cover
     AWS_AUTO_CREATE_BUCKET = False
     AWS_QUERYSTRING_AUTH = True
     AWS_S3_CUSTOM_DOMAIN = None
+    STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+    COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
     COLLECTFAST_ENABLED = True
-    AWS_DEFAULT_ACL = None
+    AWS_DEFAULT_ACL = 'private'
 
     # Staticfiles Assets
     STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
