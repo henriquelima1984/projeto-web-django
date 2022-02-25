@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# postgre files for local development
+
+.docker/.pgdata
