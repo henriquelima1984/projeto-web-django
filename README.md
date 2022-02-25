@@ -9,7 +9,7 @@ Acesse em -> https://projetowebdjango.herokuapp.com/
 [![codecov](https://codecov.io/gh/henriquelima1984/projeto-web-django/branch/main/graph/badge.svg?token=9UOHWJMH4C)](https://codecov.io/gh/henriquelima1984/projeto-web-django)
 [![Django CI](https://github.com/henriquelima1984/projeto-web-django/actions/workflows/python-app.yml/badge.svg?branch=main)](https://github.com/henriquelima1984/projeto-web-django/actions/workflows/python-app.yml)
 
-Passo a passo:
+Passo a passo para rodar esse site.
 
 1 - Instale o pipenv e depois todas as dependências do projeto.
 
