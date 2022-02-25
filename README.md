@@ -11,16 +11,20 @@ Acesse em -> https://projetowebdjango.herokuapp.com/
 
 Passo a passo para rodar esse site.
 
-1 - Instale o pipenv e depois todas as dependências do projeto.
-
+1 - Instale o pipenv e depois todas as dependências dentro do seu projeto:
 ```console
 pip install -q pipenv
 pipenv sync --dev
 ```
 
-2 - Para rodar flake8, pytest and codecov
+2 - Ativar e desativar virutalenv com pipenv:
+```console
+pipenv shell 
+deactivate
+```
+
+3 - Para rodar flake8 and pytest
 ```console
 pipenv run flake8
 pipenv run pytest --cov=nome do pacote
-pipenv run codecov
 ```
