@@ -42,6 +42,8 @@ AUTH_USER_MODEL = 'base.User'
 INSTALLED_APPS = [
     'base',
     'aperitivos',
+    'modulos',
+    'ordered_model',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -74,6 +76,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'modulos.context_processors.listar_modulos',
             ],
         },
     },
