@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Python Pro - Aperitivo{% endblock title %}
+{% block description %}Página do curso Python Pro{% endblock description %}
+{% block body %}
+
+    <div class="container" align="center">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="mt-4 mb-3">{{ aula.titulo | default:"Faltando Título" }}</h1>
+                <iframe
+                        src="https://player.vimeo.com/video/{{ aula.vimeo_id }}?h=8ce2ff83ce&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                        style=width:640px;height:360px;"
+                        title="AULA 01 - MOTIVA&amp;Ccedil;&amp;Atilde;O &amp;mdash; Curso de Python Gr&amp;aacute;tis">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
