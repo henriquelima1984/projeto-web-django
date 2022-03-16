@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'base',
     'aperitivos',
     'modulos',
+    'turmas',
     'ordered_model',
     'django.contrib.admin',
     'django.contrib.auth',

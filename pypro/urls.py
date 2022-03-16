@@ -22,6 +22,7 @@ urlpatterns = [
     path('', include('base.urls')),
     path('aperitivos/', include('aperitivos.urls')),
     path('modulos/', include('modulos.urls')),
+    path('turmas/', include('turmas.urls')),
 ]
 
 if settings.DEBUG:  # pragma: no cover
