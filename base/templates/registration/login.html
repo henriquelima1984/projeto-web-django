@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    <div class="container" style="padding-top: 50px; padding-left: 0">
+    <div class="container">
         <div class="row">
             <div class=class="col-md-12" style="padding-left: 0; padding-top: 70px">
                 {% if form.errors %}
@@ -16,7 +16,7 @@
                         <p>Your account doesn't have access to this page. To proceed,
                             please login with an account that has access.</p>
                     {% else %}
-                        <p>Please login to see this page.</p>
+                        <p>Faça login para acessar a plataforma.</p>
                     {% endif %}
                 {% endif %}
 
@@ -39,6 +39,7 @@
 
                 {# Assumes you setup the password_reset view in your URLconf #}
                 <p><a href="{% url 'password_reset' %}">Esqueceu sua senha?</a></p>
+
             </div>
         </div>
     </div>
